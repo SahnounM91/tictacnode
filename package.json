@@ -4,6 +4,8 @@
   "description": "simple console tictacgame",
   "main": "game.js",
   "scripts": {
+    "start": "node game.js",
+    "dev": "nodemon --watch game.js",
     "test": "jasmine"
   },
   "repository": {
@@ -15,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/SahnounM91/TICTAC/issues"
   },
-  "homepage": "https://github.com/SahnounM91/TICTAC#readme"
+  "homepage": "https://github.com/SahnounM91/TICTAC#readme",
+  "devDependencies": {
+    "jasmine": "^4.5.0",
+    "nodemon": "^2.0.20"
+  }
 }
