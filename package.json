@@ -1,0 +1,19 @@
+{
+  "name": "tictacnode",
+  "version": "1.0.0",
+  "description": "simple console tictacgame",
+  "main": "game.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SahnounM91/TICTAC.git"
+  },
+  "author": "s@hnOOn",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/SahnounM91/TICTAC/issues"
+  },
+  "homepage": "https://github.com/SahnounM91/TICTAC#readme"
+}
