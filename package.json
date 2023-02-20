@@ -17,8 +17,11 @@
   "bugs": {
     "url": "https://github.com/SahnounM91/TICTAC/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/SahnounM91/TICTAC#readme",
   "devDependencies": {
+    "chalk": "^5.2.0",
+    "figlet": "^1.5.2",
     "jasmine": "^4.5.0",
     "nodemon": "^2.0.20"
   }
