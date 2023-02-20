@@ -1,15 +1,15 @@
-import inquirer from "inquirer"
+import inquirer from "inquirer";
 
 const MOVES = [
-    '0',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
+    '0  [0,0]',
+    '1  [0,1]',
+    '2  [0,2]',
+    '3  [1,0]',
+    '4  [1,1]',
+    '5  [1,2]',
+    '6  [2,0]',
+    '7  [2,1]',
+    '8  [2,2]',
 ]
 
 export class Player {
@@ -18,9 +18,9 @@ export class Player {
         this.pseudo = `Player ${turn}`
     }
 
-    init() {
-        const answer = inquirer.prompt({
-            pseudo: 'pseudo',
+    async initialize() {
+        const answer = await inquirer.prompt({
+            name: 'pseudo',
             type:'input',
             message: 'who are you ?',
             default: `Player ${this.turn}`
@@ -31,12 +31,13 @@ export class Player {
         }
     }
 
-    playerMove(scene){
+   
+    async playerMove(scene){
         const isMoveList = MOVES.filter((_,index) => !scene.table[index])
-        const answer = inquirer.prompt({
+        const answer = await inquirer.prompt({
             name: 'move',
             type: "list",
-            message: `${this.name} choose your move `,
+            message: `${this.pseudo} choose your move `,
             choices: isMoveList
 
         })

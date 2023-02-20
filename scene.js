@@ -1,4 +1,5 @@
 import chalk from "chalk";
+import { Player } from "./player.js";
 
 export class Scene {
     constructor() {
@@ -12,8 +13,8 @@ export class Scene {
 
     // place X or O in a position
 
-    place(player) {
-        const position = player.playerMove(this)
+    async place(player) {
+        const position = await player.playerMove(this)
 
         if (this.table[position] == 0) {
             this.table[position] = player.turn
@@ -29,12 +30,13 @@ export class Scene {
         for (let i = 0; i < 3; i++) {
             let row = []
             for (let j = 0; j < 3; j++) {
-                row.push(this.marks[this.table[i * 3 + j]])
+                row.push(this.borders[this.table[i * 3 + j]])
             }
             arr.push(row.join(' | '))
         }
         console.log(arr.join('\n') + '\n')
     }
+
 
 
     isWin(player) {
