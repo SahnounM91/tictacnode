@@ -5,13 +5,16 @@ export const startGame = async (scene, playerOne, playerTwo) => {
     scene = new Scene();
     playerOne = new Player(1);
     await playerOne.initialize();
-
     playerTwo = new Player(2);
     await playerTwo.initialize();
+    gameOn(scene, playerOne, playerTwo)
+}
+
+export const gameOn = async (scene, playerOne, playerTwo, index = 0) => {
 
     let whoPlay = 0;
+    while (index < 9) {
 
-    for (let index = 0; index < 9; index++) {
         const playerturn = (whoPlay % 2 + 1 === 1) ? playerOne : playerTwo;
         await scene.place(playerturn);
         scene.print();

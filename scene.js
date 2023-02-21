@@ -17,24 +17,23 @@ export class Scene {
         const position = await player.playerMove(this)
 
         if (this.table[position] == 0) {
-            this.table[position] = player.turn
-            return true
+            this.table[position] = player.turn;
+            return true;
         }
-        console.log('place not free !!')
-        return false
+        return false;
     }
 
     //print the new scene
     print() {
-        const arr = []
+        const arr = [];
         for (let i = 0; i < 3; i++) {
-            let row = []
+            let row = [];
             for (let j = 0; j < 3; j++) {
-                row.push(this.borders[this.table[i * 3 + j]])
+                row.push(this.borders[this.table[i * 3 + j]]);
             }
-            arr.push(row.join(' | '))
+            arr.push(row.join(' | '));
         }
-        console.log(arr.join('\n') + '\n')
+        console.log(arr.join('\n') + '\n');
     }
 
 
